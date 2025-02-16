@@ -1,0 +1,55 @@
+@use '../utils/' as *;
+
+.aal-output-area {
+    background-color: #00000008;
+    width: 619px;
+    height: 670px;
+    border-radius: 8px;
+}
+
+.profit {
+    background-color: #fff;
+    width: 509px;
+    border-radius: 5px;
+    border: 1px solid #0CC805;
+    transform: translateY(55px);
+    &-red{
+        border: 1px solid #c80505; 
+    }
+
+    &-title {
+        font-size: 24px;
+    }
+
+    &-amount {
+        font-size: 70px;
+        color: #0CC805;
+        font-weight: 600;
+
+        &-red {
+            color: #c80505;
+        }
+    }
+
+    &-status {
+        font-size: 16px;
+        color: #0CC805;
+        padding: 8px;
+        background-color: #0bc80519;
+        border-radius: 5px;
+        border: 1px solid #0CC805;
+    }
+
+    &-status-red {
+        font-size: 16px;
+        color: #c80505;
+        padding: 8px;
+        background-color: #c8050519;
+        border-radius: 5px;
+        border: 1px solid #c80505;
+    }
+}
+
+.calculation-display-list {
+    margin-top: 130px;
+}

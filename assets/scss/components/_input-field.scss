@@ -1,0 +1,17 @@
+@use '../utils/'as *;
+
+.aal-input-fields{
+    &-label{
+        & span{
+            color: #0000004c;
+            font-weight: 400;
+        }
+    }
+}
+.calculator-field {
+    border: 1px solid #000;
+    &:focus{
+        box-shadow: none;
+        border: 2px solid #000;
+    }
+}

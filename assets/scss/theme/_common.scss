@@ -1,0 +1,76 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  1.2 Common Classes
+/*----------------------------------------*/
+
+.w-img {
+	& img {
+		width: 100%;
+	}
+}
+
+.m-img {
+	& img {
+		max-width: 100%;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.fix {
+	overflow: hidden
+}
+
+.clear {
+	clear: both;
+}
+
+.z-index-1 {
+	z-index: 1;
+}
+.z-index-2 {
+	z-index: 2;
+}
+.z-index-3 {
+	z-index: 3;
+}
+
+.z-index-11 {
+	z-index: 11;
+}
+
+.overflow-y-visible {
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.overflow-x-visible {
+	overflow-x: visible;
+	overflow-y: hidden;
+}
+
+.p-relative {
+	position: relative;
+}
+
+.p-absolute {
+	position: absolute;
+}
+
+
+.title-upper {
+	text-transform: uppercase;
+}
+
+.br-bottom{
+	border-bottom: 1px solid #11111131;
+}
+.br-top{
+	border-top: 1px solid #11111131;
+}
+
+.font-bold{
+	font-weight: 700;
+}
