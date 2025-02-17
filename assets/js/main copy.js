@@ -20,13 +20,7 @@
     const profitDisplay = document.querySelector('#profit');
 
 
-    const handleProfitShow = () => {
-        const salePrice = parseFloat(getSalePrice.value) || 0; // If NaN, default to 0
-        // Get all numbers from input fields, defaulting to 0 if empty
-        let salesTax = parseFloat(getSalesTax.value) || 0;
-        let ebayFeesPercentage = parseFloat(getEbayFees.value) || 0;
-        let costItem = parseFloat(getCostItem.value) || 0;
-        let shippingCost = parseFloat(getShippingCost.value) || 0;
+    const handleProfitShow = (salePrice, salesTax, ebayFeesPercentage, costItem, shippingCost) => {
 
         const ebayFeesDecimal = ebayFeesPercentage / 100;
         const ebayFees = ebayFeesDecimal * salePrice;
@@ -60,19 +54,16 @@
     }
 
     getSalePrice.addEventListener("keyup", (e) => {
-        handleProfitShow();
-    })
-    getSalesTax.addEventListener("keyup", (e) => {
-        handleProfitShow();
-    })
-    getEbayFees.addEventListener("keyup", (e) => {
-        handleProfitShow();
-    })
-    getCostItem.addEventListener("keyup", (e) => {
-        handleProfitShow();
-    })
-    getShippingCost.addEventListener("keyup", (e) => {
-        handleProfitShow();
+        const salePrice = parseFloat(e.target.value) || 0; // If NaN, default to 0
+
+        // Get all numbers from input fields, defaulting to 0 if empty
+        let salesTax = parseFloat(getSalesTax.value) || 0;
+        let ebayFeesPercentage = parseFloat(getEbayFees.value) || 0;
+        let costItem = parseFloat(getCostItem.value) || 0;
+        let shippingCost = parseFloat(getShippingCost.value) || 0;
+
+        handleProfitShow(salePrice, salesTax, ebayFeesPercentage, costItem, shippingCost);
+
     })
 
 })(jQuery)
