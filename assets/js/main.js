@@ -44,14 +44,18 @@
 
         if (totalProfit <= 0) {
             profitAmountDisplay.classList.add('profit-amount-red');
+            profitAmountDisplay.classList.remove('profit-amount-green');
             profitStatusDisplay.classList.add('profit-status-red')
             profitDisplay.classList.add('profit-red')
+            profitDisplay.classList.remove('profit-green')
             profitStatusDisplay.textContent = '😭 Loss'
         }
         else if (totalProfit > 0) {
             profitAmountDisplay.classList.remove('profit-amount-red')
+            profitAmountDisplay.classList.add('profit-amount-green')
             profitStatusDisplay.classList.remove('profit-status-red')
             profitDisplay.classList.remove('profit-red')
+            profitDisplay.classList.add('profit-green')
             profitStatusDisplay.textContent = '😍 Very Good'
         }
 

@@ -3001,22 +3001,28 @@ img {
   background-color: #fff;
   width: 509px;
   border-radius: 5px;
-  border: 1px solid #0CC805;
+  border: 1px solid #000;
   transform: translateY(55px);
 }
 .profit-red {
   border: 1px solid #c80505;
+}
+.profit-green {
+  border: 1px solid #0CC805;
 }
 .profit-title {
   font-size: 24px;
 }
 .profit-amount {
   font-size: 70px;
-  color: #0CC805;
+  color: #000;
   font-weight: 600;
 }
 .profit-amount-red {
   color: #c80505;
+}
+.profit-amount-green {
+  color: #0CC805;
 }
 .profit-status {
   font-size: 16px;

@@ -11,10 +11,13 @@
     background-color: #fff;
     width: 509px;
     border-radius: 5px;
-    border: 1px solid #0CC805;
+    border: 1px solid #000;
     transform: translateY(55px);
     &-red{
         border: 1px solid #c80505; 
+    }
+    &-green{
+        border: 1px solid #0CC805;
     }
 
     &-title {
@@ -23,11 +26,14 @@
 
     &-amount {
         font-size: 70px;
-        color: #0CC805;
+        color: #000;
         font-weight: 600;
 
         &-red {
             color: #c80505;
+        }
+        &-green {
+            color: #0CC805;
         }
     }
 
