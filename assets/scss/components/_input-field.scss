@@ -15,3 +15,10 @@
         border: 2px solid #000;
     }
 }
+
+.input-field-number{
+    @media #{$sm, $xs} {
+        margin-bottom: 14px;
+        
+    }
+}
