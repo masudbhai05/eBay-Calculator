@@ -3026,11 +3026,21 @@ img {
     width: 414px;
   }
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
   .profit {
     width: auto;
     height: auto;
     margin-right: 55px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
+  .profit {
+    width: auto;
+    height: auto;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 18px;
+    transform: translateY(16px);
   }
 }
 .profit-red {
@@ -3042,10 +3052,20 @@ img {
 .profit-title {
   font-size: 24px;
 }
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
+  .profit-title {
+    font-size: 18px;
+  }
+}
 .profit-amount {
   font-size: 70px;
   color: #000;
   font-weight: 600;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
+  .profit-amount {
+    font-size: 35px;
+  }
 }
 .profit-amount-red {
   color: #c80505;
@@ -3076,6 +3096,13 @@ img {
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .calculation-display-list {
     margin-top: 112px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
+  .calculation-display-list {
+    margin-top: 42px;
+    margin-right: 16px;
+    margin-left: 16px;
   }
 }
 

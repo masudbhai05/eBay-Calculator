@@ -27,10 +27,19 @@
     @media #{$xl} {
         width: 414px;
     }
-    @media #{$lg, $md, $sm, $xs} {
+    @media #{$lg, $md} {
         width: auto;
         height: auto;
         margin-right: 55px;
+    }
+    @media #{$sm, $xs} {
+        width: auto;
+        height: auto;
+        margin-right: 16px;
+        margin-left: 16px;
+        margin-top: 18px;
+        transform: translateY(16px);
+
     }
     &-red{
         border: 1px solid #c80505; 
@@ -41,12 +50,18 @@
 
     &-title {
         font-size: 24px;
+        @media #{$sm, $xs} {
+            font-size: 18px;
+        }
     }
 
     &-amount {
         font-size: 70px;
         color: #000;
         font-weight: 600;
+        @media #{$sm, $xs} {
+            font-size: 35px;
+        }
 
         &-red {
             color: #c80505;
@@ -79,5 +94,10 @@
     margin-top: 130px;
     @media #{$xl} {
         margin-top: 112px;
+    }
+    @media #{$sm, $xs} {
+        margin-top: 42px;
+        margin-right: 16px;
+        margin-left: 16px;
     }
 }
