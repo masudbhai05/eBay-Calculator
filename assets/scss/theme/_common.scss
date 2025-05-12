@@ -74,3 +74,14 @@ img {
 .font-bold{
 	font-weight: 700;
 }
+
+.title-dot::before{
+content: '';
+width: 17px;
+height: 17px;
+background-color: #0CC805;
+display: inline-block;
+margin-right: 10px;
+transform: translateY(-4px);
+border-radius: 50%;
+}

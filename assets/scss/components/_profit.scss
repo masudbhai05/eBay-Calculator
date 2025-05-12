@@ -6,10 +6,32 @@
     height: 670px;
     border-radius: 8px;
     margin-bottom: 30px;
+
     @media #{$xl} {
         width: 525px;
         height: 648px;
     }
+
+    @media #{$lg, $md, $sm, $xs} {
+        width: auto;
+        height: auto;
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+}
+
+.aal-Increased-output-area {
+    background-color: #00000008;
+    width: 619px;
+    height: 480px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    @media #{$xl} {
+        width: 525px;
+        height: 648px;
+    }
+
     @media #{$lg, $md, $sm, $xs} {
         width: auto;
         height: auto;
@@ -24,14 +46,17 @@
     border-radius: 5px;
     border: 1px solid #000;
     transform: translateY(55px);
+
     @media #{$xl} {
         width: 414px;
     }
+
     @media #{$lg, $md} {
         width: auto;
         height: auto;
         margin-right: 55px;
     }
+
     @media #{$sm, $xs} {
         width: auto;
         height: auto;
@@ -41,15 +66,19 @@
         transform: translateY(16px);
 
     }
-    &-red{
-        border: 1px solid #c80505; 
+
+    &-red {
+        border: 1px solid #c80505;
     }
-    &-green{
+
+    &-green {
         border: 1px solid #0CC805;
     }
 
+
     &-title {
         font-size: 24px;
+
         @media #{$sm, $xs} {
             font-size: 18px;
         }
@@ -59,6 +88,7 @@
         font-size: 70px;
         color: #000;
         font-weight: 600;
+
         @media #{$sm, $xs} {
             font-size: 35px;
         }
@@ -66,10 +96,52 @@
         &-red {
             color: #c80505;
         }
+
         &-green {
             color: #0CC805;
         }
     }
+
+    & .copy {
+        color: #0CC805;
+        font-size: 25px;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 30px;
+        transition: all .3s ease;
+        background-color: #0bc80531;
+
+        &:hover {
+            background-color: #0CC805;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &-status {
+            background-color: #c4c4c4;
+            padding: 8px;
+            border-radius: 5px;
+            bottom: -31px;
+            left: 42%;
+            display: none;
+            visibility: hidden;
+            transition: all 1s ease;
+
+        }
+    }
+
+    .red {
+        color: #c80505;
+    }
+
+    .green {
+        color: #0CC805;
+    }
+
 
     &-status {
         font-size: 16px;
@@ -92,9 +164,25 @@
 
 .calculation-display-list {
     margin-top: 130px;
+
     @media #{$xl} {
         margin-top: 112px;
     }
+
+    @media #{$sm, $xs} {
+        margin-top: 42px;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+}
+
+.increased-display-list {
+    margin-top: 90px;
+
+    @media #{$xl} {
+        margin-top: 112px;
+    }
+
     @media #{$sm, $xs} {
         margin-top: 42px;
         margin-right: 16px;

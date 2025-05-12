@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eBay Calculator</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -30,38 +31,46 @@
     </header>
 
     <main>
-        <div class="aal-calculator-area">
+        <!-- aal-calculator-area -->
+        <div class="aal-calculator-area mb-100">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6">
-                        <form >
-                           <div class="aal-input-fields mt-40">
-                            <div class="sale-price input-field-number mb-35">
-                                <label for="sale-price" class="aal-input-fields-label">Sale Price</label>
-                                <input id="sale-price" type="text" class="form-control calculator-field mt-8" aria-label="Username"
-                                    aria-describedby="basic-addon1">
+                        <form>
+                            <div class="aal-input-fields mt-50">
+                                <div class="sale-price input-field-number mb-35 p-relative">
+                                    <span class="sale-price-icon p-absolute"><i class="far fa-box-usd"></i></span>
+                                    <label for="sale-price" class="aal-input-fields-label">Sale Price</label>
+                                    <input id="sale-price" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="item-cost input-field-number mb-35 p-relative">
+                                    <span class="item-cost-icon p-absolute"><i class="far fa-usd-square"></i></span>
+                                    <label for="cost-item" class="aal-input-fields-label">Cost of Item</label>
+                                    <input id="cost-item" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="sales-tax input-field-number mb-35 p-relative">
+                                    <span class="sales-tax-icon p-absolute"><i class="far fa-funnel-dollar"></i></span>
+                                    <label for="sales-tax" class="aal-input-fields-label">Sales Tax</label>
+                                    <input id="sales-tax" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="ebay-fees input-field-number mb-35 p-relative">
+                                    <span class="ebay-fees-icon p-absolute"><i class="fab fa-ebay"></i></span>
+                                    <label for="ebay-fees" class="aal-input-fields-label">eBay Fees
+                                        <span>(Percentage)</span></label>
+                                    <input id="ebay-fees" type="text" placeholder="%"
+                                        class="form-control calculator-field mt-8" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="shipping-cost input-field-number mb-35 p-relative">
+                                    <span class="shipping-cost-icon p-absolute"><i class="far fa-truck"></i></span>
+                                    <label for="shipping-cost" class="aal-input-fields-label">Shipping Cost</label>
+                                    <input id="shipping-cost" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
                             </div>
-                            <div class="sales-tax input-field-number mb-35">
-                                <label for="sales-tax" class="aal-input-fields-label">Sales Tax</label>
-                                <input id="sales-tax" type="text" class="form-control calculator-field mt-8" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                            <div class="ebay-fees input-field-number mb-35">
-                                <label for="ebay-fees" class="aal-input-fields-label">eBay Fees <span>(Percentage)</span></label>
-                                <input id="ebay-fees" type="text" placeholder="%" class="form-control calculator-field mt-8" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                            <div class="item-cost input-field-number mb-35">
-                                <label for="cost-item" class="aal-input-fields-label">Cost of item</label>
-                                <input id="cost-item" type="text" class="form-control calculator-field mt-8" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                            <div class="shipping-cost input-field-number mb-35">
-                                <label for="shipping-cost" class="aal-input-fields-label">Shipping Cost</label>
-                                <input id="shipping-cost" type="text" class="form-control calculator-field mt-8" aria-label="Username"
-                                    aria-describedby="basic-addon1">
-                            </div>
-                           </div>
                         </form>
                     </div>
                     <div class="col-xl-6">
@@ -75,27 +84,84 @@
                             <div class="calculation-display-list ml-55 mr-55">
                                 <div class="calculation-output d-flex justify-content-between align-items-center">
                                     <p id="display-sale-price" class="calculation-title">Sale Price:</p>
-                                    <p id="display-sale-price-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-sale-price-amount" class="calculation-amount font-bold">$0</p>
                                 </div>
                                 <div class="calculation-output d-flex justify-content-between align-items-center">
                                     <p id="display-sales-tax" class="calculation-title">Sales Tax:</p>
-                                    <p id="display-sales-tax-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-sales-tax-amount" class="calculation-amount font-bold">$0</p>
                                 </div>
                                 <div class="calculation-output d-flex justify-content-between align-items-center">
                                     <p id="display-ebay-fees" class="calculation-title">eBay Fees:</p>
-                                    <p id="display-ebay-fees-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-ebay-fees-amount" class="calculation-amount font-bold">$0</p>
                                 </div>
                                 <div class="calculation-output d-flex justify-content-between align-items-center">
                                     <p id="display-cost-item" class="calculation-title">Cost of item:</p>
-                                    <p id="display-cost-item-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-cost-item-amount" class="calculation-amount font-bold">$0</p>
                                 </div>
                                 <div class="calculation-output d-flex justify-content-between align-items-center">
                                     <p id="display-shipping-cost" class="calculation-title">Shipping Cost:</p>
-                                    <p id="display-shipping-cost-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-shipping-cost-amount" class="calculation-amount font-bold">$0</p>
+                                </div>
+                                <div
+                                    class="calculation-output d-flex justify-content-between align-items-center pt-10 br-top">
+                                    <p id="display-total-profit" class="calculation-title">Total Profit:</p>
+                                    <p id="display-total-profit-amount" class="calculation-amount font-bold">$0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- aal-calculator-area -->
+
+        <div class="aal-increased-price-area mb-120">
+            <div class="container">
+                <h2 class="title-dot">Increase Price</h2>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <form>
+                            <div class="aal-input-fields mt-50">
+                                <div class="sale-price input-field-number mb-35 p-relative">
+                                    <span class="sale-price-icon p-absolute"><i class="far fa-box-usd"></i></span>
+                                    <label for="increase-value" class="aal-input-fields-label">Increased Value (%)</label>
+                                    <input id="increase-value" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="item-cost input-field-number mb-35 p-relative">
+                                    <span class="item-cost-icon p-absolute"><i class="far fa-usd-square"></i></span>
+                                    <label for="current-cost" class="aal-input-fields-label">Cost of Item</label>
+                                    <input id="current-cost" type="text" class="form-control calculator-field mt-8"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                               
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="aal-Increased-output-area ml-20 mt-15 p-relative">
+                            <div id="profit" class="profit increase p-relative pt-25 pb-7 text-center ml-55 mt-55 ">
+                                <p id="increase-title" class="profit-title">New Price</p>
+                                <h3 id="increase-amount-big" class="profit-amount">$00</h3>
+                                <span id="copy" class="copy"><i class="far fa-copy"></i></span>
+                                <span id="copied-text" class="copy-status p-absolute"></span>
+
+                            </div>
+
+                            <div class="increased-display-list ml-55 mr-55">
+                                <div class="calculation-output d-flex justify-content-between align-items-center">
+                                    <p id="display-increase-value" class="calculation-title">Increased Value:</p>
+                                    <p id="display-increase-number" class="calculation-amount font-bold">$0</p>
+                                </div>
+                                <div class="calculation-output d-flex justify-content-between align-items-center">
+                                    <p id="display-current-cost" class="calculation-title">Cost of Item:</p>
+                                    <p id="display-increase-cost-number" class="calculation-amount font-bold">$0</p>
                                 </div>
                                 <div class="calculation-output d-flex justify-content-between align-items-center pt-10 br-top">
-                                    <p id="display-total-profit" class="calculation-title">Total Profit:</p>
-                                    <p id="display-total-profit-amount" class="calculation-amount font-bold">0</p>
+                                    <p id="display-new-price" class="calculation-title">New Price:</p>
+                                    <p id="display-new-price-amount" class="calculation-amount font-bold">$0</p>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +169,19 @@
                 </div>
             </div>
         </div>
+
     </main>
+
+    <footer>
+        <div class="footer-area">
+           <div class="container">
+            <div class="meta-data d-flex justify-content-between">
+                <p>© 2025, eBay Calculator All Rights Reserved</p>
+                <p>Powered by <span>MakeMyYard</span></p>
+            </div>
+           </div>
+        </div>
+    </footer>
 
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/jquery-3.7.1.min.js"></script>

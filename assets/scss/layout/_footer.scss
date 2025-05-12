@@ -1,0 +1,14 @@
+@use '../utils/' as *;
+.footer-area{
+    background-color: var( --footer-color);
+    height: 60px;
+    & p{
+        padding-top: 20px;
+        padding-left: 20px;
+        color: #5e5e5e;
+    }
+    & span{
+        color: #0CC805;
+        font-weight: 600;
+    }
+}

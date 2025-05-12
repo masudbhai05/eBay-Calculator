@@ -35,10 +35,10 @@
 
         // display number on UI 
         salePriceAmountDisplay.textContent = `$ ${salePrice}`;
-        salesTaxDisplay.textContent = `$ ${salesTax}`;
-        ebayFeesxDisplay.textContent = `$ ${ebayFees.toFixed(2)}`;
-        costItemDisplay.textContent = `$ ${costItem}`;
-        shippingCostDisplay.textContent = `$ ${shippingCost}`;
+        salesTaxDisplay.textContent = `$ -${salesTax}`;
+        ebayFeesxDisplay.textContent = `$ -${ebayFees.toFixed(2)}`;
+        costItemDisplay.textContent = `$ -${costItem}`;
+        shippingCostDisplay.textContent = `-$ ${shippingCost}`;
         totalProfittDisplay.textContent = `$ ${totalProfit.toFixed(2)}`;
         profitAmountDisplay.textContent = `$ ${totalProfit.toFixed(2)}`;
 
@@ -78,5 +78,80 @@
     getShippingCost.addEventListener("keyup", (e) => {
         handleProfitShow();
     })
+
+    // this is increased price section area
+    // get the value from input field 
+    const getIncreaseValue = document.querySelector('#increase-value');
+    const getCurrentCost = document.querySelector('#current-cost');
+    const getCopyValue = document.querySelector('#copy')
+
+    // This for showing on display 
+    const displayIncreaseBig = document.querySelector('#increase-amount-big');
+    const displayIncreaseValue = document.querySelector('#display-increase-number');
+    const displayCurrentCost = document.querySelector('#display-increase-cost-number');
+    const displayNewPrice = document.querySelector('#display-new-price-amount');
+    const displayCopiedText = document.querySelector('#copied-text');
+
+    const handleIncreaseThePrice = () => {
+
+        const percentageValue = parseFloat(getIncreaseValue.value) || 0;
+        const currentPrice = parseFloat(getCurrentCost.value) || 0;
+
+        const addPercentageValue = percentageValue / 100;
+        const additionalPrice = currentPrice * addPercentageValue;
+        const newPrice = currentPrice + additionalPrice;
+
+        // show the values and price in the UI
+        displayIncreaseBig.textContent = `$${newPrice}`;
+        displayIncreaseValue.textContent = `$${additionalPrice.toFixed(2)}`;
+        displayCurrentCost.textContent = `$${currentPrice}`;
+        displayNewPrice.textContent = `$${newPrice.toFixed(2)}`;
+
+
+        if (newPrice <= 0) {
+            displayIncreaseBig.classList.add('red')
+            displayIncreaseBig.classList.remove('green')
+        } else {
+            displayIncreaseBig.classList.add('green')
+            displayIncreaseBig.classList.remove('red')
+        }
+
+        return newPrice;
+
+    }
+
+    const handleCopy = () => {
+        const newPrice = handleIncreaseThePrice();
+        navigator.clipboard.writeText(newPrice)
+            .then(() => {
+                displayCopiedText.style.visibility = 'visible'
+                displayCopiedText.style.display = 'inline-block'
+                displayCopiedText.textContent = "Copied!"
+
+                // Optional: reset after 2 seconds
+            setTimeout(() => {
+                displayCopiedText.textContent = "";
+                displayCopiedText.style.visibility = 'hidden'
+                displayCopiedText.style.display = 'none'
+            }, 2000);
+            })
+            .catch(() => {
+                console.error("Failed to copy: ", err);
+               displayCopiedText.textContent = "Copy Failed!"
+            })
+
+    }
+   
+
+    getIncreaseValue.addEventListener("keyup", (e) => {
+        handleIncreaseThePrice();
+    })
+    getCurrentCost.addEventListener("keyup", (e) => {
+        handleIncreaseThePrice();
+    })
+    getCopyValue.addEventListener("click", () => {
+        handleCopy()
+    })
+
 
 })(jQuery)

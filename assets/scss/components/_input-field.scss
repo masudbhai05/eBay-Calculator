@@ -22,3 +22,15 @@
         
     }
 }
+.ebay-fees{
+    &-icon{
+       font-size: 25px;
+    }
+}
+.shipping-cost, .ebay-fees, .sales-tax, .item-cost, .sale-price{
+    &-icon{
+        top: 50px;
+        right: 17px;
+        color: var(--icon-color);
+    }
+}
