@@ -102,7 +102,7 @@
         const newPrice = currentPrice + additionalPrice;
 
         // show the values and price in the UI
-        displayIncreaseBig.textContent = `$${newPrice}`;
+        displayIncreaseBig.textContent = `$${newPrice.toFixed(2)}`;
         displayIncreaseValue.textContent = `$${additionalPrice.toFixed(2)}`;
         displayCurrentCost.textContent = `$${currentPrice}`;
         displayNewPrice.textContent = `$${newPrice.toFixed(2)}`;
