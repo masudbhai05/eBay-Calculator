@@ -4481,6 +4481,41 @@ img {
   }
 }
 
+.toolbar {
+  background-color: #ffffff;
+  width: 300px;
+  padding: 10px;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 50%;
+  left: 20px;
+  z-index: 1000;
+  box-shadow: -1px 1px 14px 3px rgba(161, 161, 161, 0.137254902);
+  transform: rotate(90deg);
+}
+
+.tools {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tools a {
+  display: block;
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+  line-height: 56px;
+  text-align: center;
+  font-size: 30px;
+  color: #4b4b4b;
+  transition: all 0.5s ease;
+  transform: rotate(-90deg);
+}
+.tools a:hover {
+  background-color: rgba(11, 200, 5, 0.1921568627);
+  color: #0CC805;
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
   .update-year {
     margin-top: 17px;

@@ -1,0 +1,39 @@
+@use '../utils/' as *;
+
+.toolbar {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 100px;
+    position: fixed;
+    bottom: 50%;
+    left: 20px;
+    z-index: 1000;
+    box-shadow: -1px 1px 14px 3px #a1a1a123;
+    transform: rotate(90deg);
+}
+
+.tools {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & a {
+        display: block;
+        width: 55px;
+        height: 55px;
+        border-radius: 30px;
+        line-height: 56px;
+        text-align: center;
+        font-size: 30px;
+        color: #4b4b4b;
+        transition: all 0.5s ease;
+        transform: rotate(-90deg);
+
+        &:hover {
+            background-color: #0bc80531;
+            color: #0CC805;
+        }
+
+    }
+}
