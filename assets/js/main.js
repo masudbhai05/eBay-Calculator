@@ -122,7 +122,7 @@
 
     const handleCopy = () => {
         const newPrice = handleIncreaseThePrice();
-        navigator.clipboard.writeText(newPrice)
+        navigator.clipboard.writeText(newPrice.toFixed(2))
             .then(() => {
                 displayCopiedText.style.visibility = 'visible'
                 displayCopiedText.style.display = 'inline-block'
