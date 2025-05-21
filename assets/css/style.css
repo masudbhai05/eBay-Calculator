@@ -4481,17 +4481,19 @@ img {
   }
 }
 
-.toolbar {
+#toolbar {
   background-color: #ffffff;
   width: 300px;
   padding: 10px;
   border-radius: 100px;
   position: fixed;
-  bottom: 50%;
+  top: 400px;
   left: 20px;
   z-index: 1000;
   box-shadow: -1px 1px 14px 3px rgba(161, 161, 161, 0.137254902);
   transform: rotate(90deg);
+  cursor: move;
+  user-select: none;
 }
 
 .tools {

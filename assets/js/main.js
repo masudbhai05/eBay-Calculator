@@ -129,19 +129,19 @@
                 displayCopiedText.textContent = "Copied!"
 
                 // Optional: reset after 2 seconds
-            setTimeout(() => {
-                displayCopiedText.textContent = "";
-                displayCopiedText.style.visibility = 'hidden'
-                displayCopiedText.style.display = 'none'
-            }, 2000);
+                setTimeout(() => {
+                    displayCopiedText.textContent = "";
+                    displayCopiedText.style.visibility = 'hidden'
+                    displayCopiedText.style.display = 'none'
+                }, 2000);
             })
             .catch(() => {
                 console.error("Failed to copy: ", err);
-               displayCopiedText.textContent = "Copy Failed!"
+                displayCopiedText.textContent = "Copy Failed!"
             })
 
     }
-   
+
 
     getIncreaseValue.addEventListener("keyup", (e) => {
         handleIncreaseThePrice();
@@ -152,6 +152,30 @@
     getCopyValue.addEventListener("click", () => {
         handleCopy()
     })
+
+
+    // js for toolbar
+    const toolbar = document.getElementById("toolbar");
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    toolbar.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - toolbar.offsetLeft;
+        offsetY = e.clientY - toolbar.offsetTop;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+            toolbar.style.left = (e.clientX - offsetX) + "px";
+            toolbar.style.top = (e.clientY - offsetY) + "px";
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
 
 
 })(jQuery)
