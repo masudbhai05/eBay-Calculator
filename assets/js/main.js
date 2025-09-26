@@ -6,12 +6,14 @@
     const getEbayFees = document.querySelector('#ebay-fees');
     const getCostItem = document.querySelector('#cost-item');
     const getShippingCost = document.querySelector('#shipping-cost');
+    const getQauntity = document.querySelector('#quantity-pack');
 
-
+// This is for showing on UI 
     const salePriceAmountDisplay = document.querySelector('#display-sale-price-amount');
     const salesTaxDisplay = document.querySelector('#display-sales-tax-amount');
-    const ebayFeesxDisplay = document.querySelector('#display-ebay-fees-amount');
+    const platformFeesDisplay = document.querySelector('#display-ebay-fees-amount');
     const costItemDisplay = document.querySelector('#display-cost-item-amount');
+    const costTitleDisplay = document.querySelector('#display-cost-item');
     const shippingCostDisplay = document.querySelector('#display-shipping-cost-amount');
     const totalProfittDisplay = document.querySelector('#display-total-profit-amount');
 
@@ -25,19 +27,23 @@
         // Get all numbers from input fields, defaulting to 0 if empty
         let salesTax = parseFloat(getSalesTax.value) || 0;
         let ebayFeesPercentage = parseFloat(getEbayFees.value) || 0;
-        let costItem = parseFloat(getCostItem.value) || 0;
+        let singleCostItem = parseFloat(getCostItem.value) || 0;
         let shippingCost = parseFloat(getShippingCost.value) || 0;
+        let qauntity = parseFloat(getQauntity.value) || 1;
 
+        // Math logic / calculator
         const ebayFeesDecimal = ebayFeesPercentage / 100;
         const ebayFees = ebayFeesDecimal * salePrice;
+        const costItem = singleCostItem * qauntity;
         const totalCost = salesTax + costItem + shippingCost + ebayFees;
         const totalProfit = salePrice - totalCost;
 
         // display number on UI 
         salePriceAmountDisplay.textContent = `$ ${salePrice}`;
         salesTaxDisplay.textContent = `$ -${salesTax}`;
-        ebayFeesxDisplay.textContent = `$ -${ebayFees.toFixed(2)}`;
+        platformFeesDisplay.textContent = `$ -${ebayFees.toFixed(2)}`;
         costItemDisplay.textContent = `$ -${costItem}`;
+        costTitleDisplay.textContent = `Item Cost × ${qauntity}:`;
         shippingCostDisplay.textContent = `-$ ${shippingCost}`;
         totalProfittDisplay.textContent = `$ ${totalProfit.toFixed(2)}`;
         profitAmountDisplay.textContent = `$ ${totalProfit.toFixed(2)}`;
@@ -63,6 +69,7 @@
 
     }
 
+    // When in any field get a value from user, then automatically trigger the function 
     getSalePrice.addEventListener("keyup", (e) => {
         handleProfitShow();
     })
@@ -75,6 +82,9 @@
     getCostItem.addEventListener("keyup", (e) => {
         handleProfitShow();
     })
+    getQauntity.addEventListener("keyup", (e) => {
+        handleProfitShow();
+    })
     getShippingCost.addEventListener("keyup", (e) => {
         handleProfitShow();
     })
@@ -85,7 +95,7 @@
     const getCurrentCost = document.querySelector('#current-cost');
     const getCopyValue = document.querySelector('#copy')
 
-    // This for showing on display 
+    // This is for showing on display 
     const displayIncreaseBig = document.querySelector('#increase-amount-big');
     const displayIncreaseValue = document.querySelector('#display-increase-number');
     const displayCurrentCost = document.querySelector('#display-increase-cost-number');

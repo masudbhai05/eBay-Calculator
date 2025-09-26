@@ -4266,9 +4266,13 @@ img {
   padding-right: 120px;
 }
 
+.aal-input-fields-label {
+  color: #8f8f8f;
+  font-size: 16px;
+}
 .aal-input-fields-label span {
-  color: rgba(0, 0, 0, 0.2980392157);
-  font-weight: 400;
+  color: #0CC805;
+  font-weight: 500;
 }
 
 .calculator-field {
@@ -4463,6 +4467,11 @@ img {
     margin-right: 16px;
     margin-left: 16px;
   }
+}
+
+.item-cost-title {
+  color: #ff6600;
+  font-weight: 600;
 }
 
 .increased-display-list {

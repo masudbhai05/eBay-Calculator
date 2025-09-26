@@ -2,9 +2,11 @@
 
 .aal-input-fields{
     &-label{
+        color: #8f8f8f;
+        font-size: 16px;
         & span{
-            color: #0000004c;
-            font-weight: 400;
+            color: #0CC805;
+            font-weight: 500;
         }
     }
 }
